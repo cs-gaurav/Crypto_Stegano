@@ -13,7 +13,7 @@ app = Flask(__name__)
 output_folder = os.path.join(app.root_path, 'static', 'temp')
 os.makedirs(output_folder, exist_ok=True)
 
-### ---------- UTILS ----------
+
 def derive_key_from_password(password: str, salt: bytes) -> bytes:
     kdf = PBKDF2HMAC( 
         algorithm=hashes.SHA256(),
