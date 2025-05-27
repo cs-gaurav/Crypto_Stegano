@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Project!</title>
+</head>
+<body class="home-bg">
+    <div class="banner">
+        <div class="text-1">
+            <h1> Cryptography + Steganography </h1>
+        </div>
+    </div>
+    <div class="container2">
+        <form action="/encrypt" method="GET" class="form-inner">
+            <button class="submit-button-home" type="submit">Encryption</button>
+        </form>
+        <form action="/decrypt" method="GET" class="form-inner">
+            <button class="submit-button-home" type="submit">Decryption</button>
+        </form>
+    </div>
+</body>
+</html>

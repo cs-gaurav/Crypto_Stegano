@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decryption!</title>
+</head>
+<body class="encrypt-bg">
+    <div class="banner">
+        <div class="text-1">
+            <h1>Steganography and Cryptography</h1>
+        </div>
+    </div>
+    <div class="container">
+        <form action="{{ url_for('decryption_method') }}" method="POST" enctype="multipart/form-data" class="encryption-form">
+            <label for="total_bits">Total Bits Hidden:</label>
+            <input type="text" id="total_bits" name="total_bits" min="128" required autocomplete="off">
+
+            <label for="image">Select Stego Image:</label>
+            <input type="file" id="image" name="user_image" accept="image/*" required>
+
+            <label for="key">Enter Key:</label>
+            <input type="password" id="key" name="user_key" required autocomplete="off">
+
+            <button type="submit" class="decrypt-button">Decrypt!</button>
+        </form>
+
+        {% if message %}
+            <div>
+                <label for="decrypted-message">Decrypted Message:</label>
+                <textarea id="decrypted-message" class="message-box" rows="3" readonly>{{ message }}</textarea>
+            </div>
+        {% elif error %}
+            <p class="error-message"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

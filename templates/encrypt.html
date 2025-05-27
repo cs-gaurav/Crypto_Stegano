@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption!</title>
+    <script>
+        function showDownloadPopup() {
+            alert("Stego image downloaded successfully!");
+        }
+    </script>
+</head>
+<body class="encrypt-bg">
+    <div class="banner">
+        <div class="text-1">
+            <h1>Steganography and Cryptography</h1>
+        </div>
+    </div>
+    <div class="container">
+        <form action="{{ url_for('encryption_method') }}" method="POST" enctype="multipart/form-data" class="encryption-form" onsubmit="setTimeout(showDownloadPopup, 1000);">
+            <label for="message">Enter Text:</label>
+            <textarea id="message" name="user_message" rows="1" required autocomplete="off" spellcheck="false"></textarea>
+            
+            <label for="key">Enter Key:</label>
+            <input type="password" id="key" name="user_key" required autocomplete="off">
+            
+            <label for="image">Select Image:</label>
+            <input type="file" id="image" name="user_image" accept="image/*" required>
+            
+            <button type="submit" class="encrypt-button">Encrypt!</button>
+            {% if success %}
+                <p style="color: white; font-family: 'Courier New', Courier, monospace;">Bits hidden: {{ bits_hidden }}</p>
+                <a href="{{ url_for('download_file', filename=download_file) }}" download style="color: white; font-family: 'Courier New', Courier, monospace;">Download stego image</a>
+            {% endif %}
+        
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
