@@ -1,13 +1,12 @@
-# Stegano_Crypto
-Cyber PBL Project
+# Cryptography & Steganography(PBL Project)
 
-- Project Overview:
+# Project Overview:
 
 In this project, we developed a secure data-hiding tool using a combination of cryptography and steganography. The main goal was to protect sensitive information by encrypting it and then hiding it inside an image. We used Fernet symmetric encryption to ensure that only users with the correct password can access the message. Once encrypted, the data is embedded into the image using Least Significant Bit (LSB) steganography, which makes subtle pixel changes that are visually undetectable.
 
-- How It Works:
+# How It Works:
 
-- Encryption and Hiding
+Encryption and Hiding
 
     Input: The user provides a message, a password, and a cover image.
 
@@ -19,7 +18,7 @@ In this project, we developed a secure data-hiding tool using a combination of c
 
     Output: The resulting stego image is provided for download. The total number of bits hidden is also displayed, which is required for later decryption.
 
-- Extraction and Decryption
+Extraction and Decryption
 
     Input: The user uploads the stego image and provides the password and the total number of hidden bits.
 
@@ -33,7 +32,7 @@ In this project, we developed a secure data-hiding tool using a combination of c
 
     Output: The original, hidden message is displayed to the user. An error is shown if the password is incorrect or the data is corrupted.
 
-- Technologies Used:
+# Technologies Used:
 
     Python: The core programming language for the back-end logic.
 
@@ -49,7 +48,7 @@ In this project, we developed a secure data-hiding tool using a combination of c
 
     JavaScript: Used for minor front-end functionality, such as displaying a download popup.
 
-- Project Structure:
+# Project Structure:
 
     main.py: Contains the Flask application logic, including the routes for home, encryption, and decryption, as well as the core steganography and cryptography functions.
 
@@ -68,12 +67,12 @@ In this project, we developed a secure data-hiding tool using a combination of c
         temp/: A temporary folder where the generated stego images are saved before being downloaded.
 
 
-- Challenges and Solutions:
+# Challenges and Solutions:
 
 During development, we faced some technical issues. One major challenge was inconsistent decryption due to mismatched keys, which we solved by attaching a salt during encryption. Another issue was image overwriting during testing, which we avoided by saving output as new files. We also added pre-validation checks to ensure the image was large enough to hold the hidden message. Initially, the tool was CLI-based, so we improved user experience by adding a basic GUI with helpful prompts and messages.
 
 
-- Future Improvements:
+# Future Improvements:
 
 In the future, we plan to:
 * Develop a more advanced GUI for easier interaction.
@@ -82,7 +81,7 @@ In the future, we plan to:
 These enhancements will make the tool more versatile, user-friendly, and reliable across various use cases.
 
 
-- Final Outcome: 
+# Final Outcome: 
 
 The final result is a fully functional tool capable of securely encrypting, embedding, extracting, and decrypting hidden messages in images. All major functionalities have been tested and documented. The tool performs well, maintains image quality, and ensures that only authorized users can retrieve the hidden data. Full documentation, sample test cases, and usage instructions are also included with the project.
 
