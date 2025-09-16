@@ -8,29 +8,29 @@ In this project, we developed a secure data-hiding tool using a combination of c
 
 Encryption and Hiding
 
--Input: The user provides a message, a password, and a cover image.
+- Input: The user provides a message, a password, and a cover image.
 
--Key Derivation: A cryptographic key is generated from the user's password using the PBKDF2HMACalgorithm with SHA256 hashing and a salt. This adds a layer of protection against brute-force attacks.
+- Key Derivation: A cryptographic key is generated from the user's password using the PBKDF2HMACalgorithm with SHA256 hashing and a salt. This adds a layer of protection against brute-force attacks.
 
--Encryption: The message is encrypted using the derived key and the Fernet symmetric encryption scheme,which ensures that the message can only be decrypted with the correct key. The salt is prepended to theencrypted data.
+- Encryption: The message is encrypted using the derived key and the Fernet symmetric encryption scheme,which ensures that the message can only be decrypted with the correct key. The salt is prepended to theencrypted data.
 
--Steganography: The encrypted data (including the salt) is converted into a binary string. The bits ofthis string are then hidden within the least significant bit of each pixel's color value in the image.For example, if a pixel's red value is 10101010, the last 0 would be replaced with the next bit fromthe binary string.
+- Steganography: The encrypted data (including the salt) is converted into a binary string. The bits ofthis string are then hidden within the least significant bit of each pixel's color value in the image.For example, if a pixel's red value is 10101010, the last 0 would be replaced with the next bit fromthe binary string.
 
--Output: The resulting stego image is provided for download. The total number of bits hidden is alsodisplayed, which is required for later decryption.
+- Output: The resulting stego image is provided for download. The total number of bits hidden is alsodisplayed, which is required for later decryption.
 
 Extraction and Decryption
 
--Input: The user uploads the stego image and provides the password and the total number of hidden bits.
+- Input: The user uploads the stego image and provides the password and the total number of hidden bits.
 
--Extraction: The program extracts the specified number of LSBs from the image's pixel data to retrievethe hidden binary string.
+- Extraction: The program extracts the specified number of LSBs from the image's pixel data to retrievethe hidden binary string.
 
--Data Separation: The first 16 bytes of the extracted data are identified as the salt, and the remainingbytes are the encrypted message.
+- Data Separation: The first 16 bytes of the extracted data are identified as the salt, and the remainingbytes are the encrypted message.
 
--Key Derivation: The same PBKDF2HMAC process is used with the provided password and the extracted saltto regenerate the correct cryptographic key.
+- Key Derivation: The same PBKDF2HMAC process is used with the provided password and the extracted saltto regenerate the correct cryptographic key.
 
--Decryption: The encrypted message is decrypted using the regenerated key and the Fernet scheme.
+- Decryption: The encrypted message is decrypted using the regenerated key and the Fernet scheme.
 
--Output: The original, hidden message is displayed to the user. An error is shown if the password isincorrect or the data is corrupted.
+- Output: The original, hidden message is displayed to the user. An error is shown if the password isincorrect or the data is corrupted.
 
 # Technologies Used:
 
