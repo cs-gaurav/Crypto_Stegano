@@ -34,19 +34,19 @@ Extraction and Decryption
 
 # Technologies Used:
 
-Python: The core programming language for the back-end logic.
+- Python: The core programming language for the back-end logic.
 
-Flask: A micro web framework used to create the web application's routes and handle HTTP requests.
+- Flask: A micro web framework used to create the web application's routes and handle HTTP requests.
 
-Pillow (PIL): A library for opening, manipulating, and saving many different image file formats.
+- Pillow (PIL): A library for opening, manipulating, and saving many different image file formats.
 
-NumPy: A library for working with arrays, used here to efficiently manipulate the pixel data of theimages.
+- NumPy: A library for working with arrays, used here to efficiently manipulate the pixel data of theimages.
 
-Cryptography.io: A Python library that provides cryptographic recipes and primitives for implementingsecure encryption. Specifically, it uses PBKDF2HMAC for key derivation and Fernet for symmetricencryption.
+- Cryptography.io: A Python library that provides cryptographic recipes and primitives for implementingsecure encryption. Specifically, it uses PBKDF2HMAC for key derivation and Fernet for symmetricencryption.
 
-HTML & CSS: Used for creating a user-friendly and visually appealing web interface.
+- HTML & CSS: Used for creating a user-friendly and visually appealing web interface.
 
-JavaScript: Used for minor front-end functionality, such as displaying a download popup.
+- JavaScript: Used for minor front-end functionality, such as displaying a download popup.
 
 # Project Structure:
 
@@ -75,9 +75,9 @@ During development, we faced some technical issues. One major challenge was inco
 # Future Improvements:
 
 In the future, we plan to:
-* Develop a more advanced GUI for easier interaction.
-* Add support for embedding data in audio and video files.
-* Implement better error handling for unsupported or corrupted image files.
+- Develop a more advanced GUI for easier interaction.
+- Add support for embedding data in audio and video files.
+- Implement better error handling for unsupported or corrupted image files.
 These enhancements will make the tool more versatile, user-friendly, and reliable across various use cases.
 
 
